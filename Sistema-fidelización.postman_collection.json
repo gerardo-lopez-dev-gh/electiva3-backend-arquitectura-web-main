@@ -1,0 +1,442 @@
+{
+	"info": {
+		"_postman_id": "299a0a41-0347-402f-b43f-e477c8243be3",
+		"name": "Sistema-fidelización",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "19719463"
+	},
+	"item": [
+		{
+			"name": "Get Clientes",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Pedro\",\n    \"apellido\": \"Perez\",\n    \"numeroDocumento\": \"12345678\",\n    \"tipoDocumento\": \"DNI\",\n    \"nacionalidad\": \"Paraguayo\",\n    \"email\": \"juan.perez@example.com\",\n    \"telefono\": \"0987654321\",\n    \"fechaNacimiento\": \"1980-01-01\"\n}"
+				},
+				"url": "http://localhost:8082/clientes/7"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/clientes/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8082/clientes/1"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/clientes/{id}",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Juan\",\n    \"apellido\": \"Perez Actualizado\",\n    \"numeroDocumento\": \"12345678\",\n    \"tipoDocumento\": \"DNI\",\n    \"nacionalidad\": \"Paraguayo\",\n    \"email\": \"juan.perez@example.com\",\n    \"telefono\": \"0987654321\",\n    \"fechaNacimiento\": \"1980-01-01\"\n}"
+				},
+				"url": "http://localhost:8082/clientes/{id}"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/clientes/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8082/clientes/{id}"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/conceptos",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"descripcion\": \"Vale de premio\",\n    \"puntosRequeridos\": 100\n}"
+				},
+				"url": "http://localhost:8082/conceptos"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/conceptos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8082/conceptos"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/conceptos/{id}",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"descripcion\": \"Vale de descuento actualizado\",\n    \"puntosRequeridos\": 200\n}"
+				},
+				"url": "http://localhost:8082/conceptos/{id}"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/conceptos/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8082/conceptos/{id}"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/reglas",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"limiteInferior\": 0,\n    \"limiteSuperior\": 199999,\n    \"montoEquivalencia\": 50000\n}"
+				},
+				"url": "http://localhost:8082/reglas"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/reglas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8082/reglas"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/reglas/{id}",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"limiteInferior\": 0,\n    \"limiteSuperior\": 199999,\n    \"montoEquivalencia\": 45000\n}"
+				},
+				"url": "http://localhost:8082/reglas/{id}"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8082/reglas/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8082/reglas/{id}"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8082/bolsa-puntos",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cliente\": { \"id\": 1 },\n    \"paramVencimiento\": { \"id\": 1 },\n    \"fechaAsignacion\": \"2024-06-17T00:00:00.000Z\",\n    \"puntajeAsignado\": 100,\n    \"puntajeUtilizado\": 0,\n    \"saldoPuntos\": 100,\n    \"montoOperacion\": 100.0\n}"
+				},
+				"url": "http://localhost:8082/bolsas"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/bolsa-puntos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8082/bolsas"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/bolsa-puntos/{id}",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fechaAsignacion\": \"2024-01-01T00:00:00Z\",\n    \"fechaCaducidad\": \"2024-12-31T00:00:00Z\",\n    \"puntajeAsignado\": 600,\n    \"puntajeUtilizado\": 0,\n    \"saldoPuntos\": 600,\n    \"montoOperacion\": 120000\n}"
+				},
+				"url": "http://localhost:8082/bolsa-puntos/{id}"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/bolsa-puntos/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8082/bolsa-puntos/{id}"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/usos",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"clienteId\": 1,\n    \"puntajeUtilizado\": 50,\n    \"fecha\": \"2024-06-17T00:00:00Z\",\n    \"conceptoUsoId\": 1\n}"
+				},
+				"url": "http://localhost:8082/usos"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/usos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8082/usos"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/usos/{id}",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"clienteId\": 1,\n    \"puntajeUtilizado\": 60,\n    \"fecha\": \"2024-06-18T00:00:00Z\",\n    \"conceptoUsoId\": 1\n}"
+				},
+				"url": "http://localhost:8082/usos/{id}"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/usos/{id}",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"clienteId\": 1,\n    \"puntajeUtilizado\": 60,\n    \"fecha\": \"2024-06-18T00:00:00Z\",\n    \"conceptoUsoId\": 1\n}"
+				},
+				"url": "http://localhost:8082/usos/{id}"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/parametros-vencimiento",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fechaInicioValidez\": \"2024-06-17T00:00:00Z\",\n    \"fechaFinValidez\": \"2025-06-17T00:00:00Z\",\n    \"diasValidez\": 365\n}"
+				},
+				"url": "http://localhost:8082/parametros-vencimiento"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/parametros-vencimiento",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8082/parametros-vencimiento"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/parametros-vencimiento/{id}",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fechaInicioValidez\": \"2024-07-17T00:00:00Z\",\n    \"fechaFinValidez\": \"2025-07-17T00:00:00Z\",\n    \"diasValidez\": 360\n}"
+				},
+				"url": "http://localhost:8082/parametros-vencimiento/{id}"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/parametros-vencimiento/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8082/parametros-vencimiento/{id}"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8082/usos/usos-por-concepto-fecha-cliente?conceptoUso=1&fechaUso=2024-01-01&clienteId=1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/usos/usos-por-concepto-fecha-cliente?conceptoUso=2&clienteId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"usos",
+						"usos-por-concepto-fecha-cliente"
+					],
+					"query": [
+						{
+							"key": "conceptoUso",
+							"value": "2"
+						},
+						{
+							"key": "clienteId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8082/bolsas/puntos-a-vencer?dias=1&clienteId=",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/bolsas/puntos-a-vencer?dias=1&clienteId=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"bolsas",
+						"puntos-a-vencer"
+					],
+					"query": [
+						{
+							"key": "dias",
+							"value": "1"
+						},
+						{
+							"key": "clienteId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8082/clientes/clientes-por-nombre-apellido-cumpleanios?nombre=Juan&apellido=Perez",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/clientes/clientes-por-nombre-apellido-cumpleanios?nombre=&apellido=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"clientes",
+						"clientes-por-nombre-apellido-cumpleanios"
+					],
+					"query": [
+						{
+							"key": "nombre",
+							"value": ""
+						},
+						{
+							"key": "apellido",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8082/bolsas/bolsa-cliente-puntos/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8082/bolsas/bolsa-cliente-puntos/1"
+			},
+			"response": []
+		}
+	]
+}
